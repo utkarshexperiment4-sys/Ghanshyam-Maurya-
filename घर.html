@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ghanshyam Maurya Farm - Green Valley Farms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FontAwesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --green-main: #2e7d32;
+      --green-light: #4caf50;
+      --green-soft: #e6f4ea;
+      --text-main: #1f2933;
+      --text-muted: #5f6c80;
+      --bg: #ffffff;
+      --accent: #ffb300;
+      --danger: #d32f2f;
+      --max-width: 1120px;
+      --radius: 14px;
+      --shadow-soft: 0 16px 40px rgba(15, 30, 30, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ----------------- Header / Nav ----------------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.92),
+        rgba(255, 255, 255, 0.86)
+      );
+      border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0.2rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--green-main);
+      letter-spacing: 0.03em;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .brand-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 20%, #c8e6c9, #2e7d32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.9rem;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--text-muted);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.25rem;
+      height: 2px;
+      border-radius: 999px;
+      transform: scaleX(0);
+      transform-origin: center;
+      background: linear-gradient(90deg, var(--green-main), var(--accent));
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(46, 125, 50, 0.2);
+      color: var(--green-main);
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(
+        135deg,
+        rgba(230, 244, 234, 0.9),
+        rgba(255, 255, 255, 0.96)
+      );
+    }
+
+    .nav-cta i {
+      font-size: 0.8rem;
+    }
+
+    /* Small screens: compress nav links */
+    @media (max-width: 720px) {
+      .nav {
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        gap: 0.85rem;
+        font-size: 0.8rem;
+      }
+
+      .brand {
+        font-size: 0.9rem;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
+
+    /* ----------------- Hero Section ----------------- */
+    .hero {
+      padding: 3.5rem 0 2.8rem;
+      background: radial-gradient(circle at top left, #e8f5e9, #ffffff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--green-main);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(46, 125, 50, 0.08);
+      border: 1px solid rgba(46, 125, 50, 0.16);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-kicker i {
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.9rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--green-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.8vw, 1.25rem);
+      color: var(--text-main);
+      font-weight: 500;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-tagline {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.4rem;
+      max-width: 36rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.78rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.98rem;
+      color: white;
+      background: linear-gradient(135deg, #43a047, #2e7d32);
+      box-shadow: 0 12px 25px rgba(46, 125, 50, 0.4);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(46, 125, 50, 0.48);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 7px 18px rgba(46, 125, 50, 0.4);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.75rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(46, 125, 50, 0.3);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--green-main);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px dashed rgba(46, 125, 50, 0.25);
+    }
+
+    .hero-badge i {
+      color: var(--green-light);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 240px;
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      background: white;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      padding: 1.35rem 1.25rem 1.15rem;
+      max-width: 380px;
+      margin-left: auto;
+    }
+
+    .hero-card-header {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 20% 20%, #ffe0b2, #8d6e63);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.7rem;
+    }
+
+    .hero-card-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-card-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-item i {
+      margin-top: 0.05rem;
+      color: var(--green-main);
+      font-size: 0.75rem;
+    }
+
+    .hero-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(76, 175, 80, 0.08);
+      color: var(--green-main);
+    }
+
+    .hero-stat {
+      color: var(--text-muted);
+    }
+
+    .hero-bg-circle {
+      position: absolute;
+      inset: 15% -10%;
+      border-radius: 40%;
+      background: radial-gradient(
+        circle at 10% 0%,
+        rgba(200, 230, 201, 0.8),
+        rgba(27, 94, 32, 0.4)
+      );
+      opacity: 0.45;
+      filter: blur(2px);
+    }
+
+    /* Responsive hero */
+    @media (max-width: 880px) {
+      .hero {
+        padding: 2.4rem 0 2.4rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.1rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-card {
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 2.1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        justify-content: center;
+      }
+
+      .hero-card {
+        padding: 1.1rem 1rem;
+        border-radius: 18px;
+      }
+    }
+
+    /* ----------------- Section base ----------------- */
+    section {
+      padding: 2.8rem 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--green-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ----------------- Features Section ----------------- */
+    .features {
+      background: var(--green-soft);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 10px 26px rgba(46, 125, 50, 0.12);
+    }
+
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-title i {
+      color: var(--green-light);
+    }
+
+    .feature-text {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-list li i {
+      color: var(--green-main);
+      margin-top: 0.1rem;
+      font-size: 0.8rem;
+    }
+
+    .feature-warning {
+      margin-top: 1.1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 0.75rem;
+      background: rgba(211, 47, 47, 0.06);
+      border: 1px solid rgba(211, 47, 47, 0.3);
+      font-size: 0.9rem;
+      color: var(--danger);
+      font-weight: 700;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+
+    .feature-warning i {
+      font-size: 1rem;
+      margin-top: 0.1rem;
+    }
+
+    .feature-note {
+      margin-top: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .feature-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .feature-stat-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(46, 125, 50, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .feature-stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .feature-stat-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-main);
+    }
+
+    @media (max-width: 880px) {
+      .features-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .feature-card {
+        padding: 1.25rem 1.1rem;
+      }
+
+      .feature-stats {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* ----------------- Gallery Section ----------------- */
+    .gallery {
+      background: #ffffff;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 0.9rem;
+      background: #f1f5f9;
+      position: relative;
+      min-height: 120px;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.05);
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 0.5rem;
+      bottom: 0.5rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.55);
+      color: #f9fafb;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .gallery-label i {
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* ----------------- Contact / Footer ----------------- */
+    .contact {
+      background: #0b2510;
+      color: #e2f1e8;
+      padding-bottom: 2.2rem;
+    }
+
+    .contact .section-heading {
+      text-align: left;
+    }
+
+    .contact .section-title {
+      color: #e2f1e8;
+    }
+
+    .contact .section-subtitle {
+      color: rgba(226, 241, 232, 0.8);
+      margin-left: 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 2.2rem;
+      margin-top: 1.4rem;
+      align-items: flex-start;
+    }
+
+    .contact-details {
+      font-size: 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(230, 244, 234, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+      color: #a5d6a7;
+      flex-shrink: 0;
+      background: rgba(3, 100, 12, 0.5);
+    }
+
+    .contact-text-title {
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-text-body {
+      color: rgba(226, 241, 232, 0.86);
+      font-size: 0.9rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(230, 244, 234, 0.8);
+      color: #e2f1e8;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .btn-outline-light i {
+      font-size: 0.9rem;
+    }
+
+    .btn-outline-light.secondary {
+      border-style: dashed;
+      opacity: 0.85;
+    }
+
+    .contact-card {
+      background: rgba(2, 46, 12, 0.88);
+      border-radius: 1.2rem;
+      padding: 1.4rem 1.35rem;
+      border: 1px solid rgba(165, 214, 167, 0.4);
+    }
+
+    .contact-card-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+
+    .contact-card-text {
+      font-size: 0.9rem;
+      color: rgba(226, 241, 232, 0.82);
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-map-note {
+      font-size: 0.78rem;
+      color: rgba(226, 241, 232, 0.7);
+      margin-top: 0.4rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(76, 175, 80, 0.3);
+      margin-top: 2rem;
+      padding-top: 0.9rem;
+      font-size: 0.78rem;
+      color: rgba(226, 241, 232, 0.75);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 0.15em;
+    }
+
+    @media (max-width: 880px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact .section-heading {
+        text-align: center;
+      }
+
+      .contact .section-subtitle {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          <span class="brand-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </span>
+          <span>Ghanshyam Maurya Farm</span>
+        </div>
+        <div class="nav-links">
+          <a href="#hero">Home</a>
+          <a href="#features">Organic Kheti</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#visit">Visit / Contact</a>
+          <a href="#visit" class="nav-cta">
+            <i class="fa-solid fa-location-dot"></i>
+            Farm Par Aayein
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-kicker">
+            <i class="fa-solid fa-leaf"></i>
+            Pure Organic • Desi Mitti Ki Khushboo
+          </div>
+          <h1 class="hero-title">Ghanshyam Maurya Farm</h1>
+          <h2 class="hero-subtitle">
+            Green Valley Farms - Shuddh Organic Kheti
+          </h2>
+          <p class="hero-tagline">
+            Taaji sabziyan, bina chemical, bina zeher – seedha khet se aapki
+            thali tak. Har fasal pyar se aur mitti ki asli taakat se ugayi jaati
+            hai.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#visit" class="btn-primary">
+              <i class="fa-solid fa-tractor"></i>
+              Farm Par Aayein (Visit Us)
+            </a>
+            <a href="#features" class="btn-ghost">
+              <i class="fa-solid fa-seedling"></i>
+              Hamari Organic Kheti Dekhein
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <i class="fa-solid fa-carrot"></i>
+              Taaji Sabziyan Roz ki Taza Katayi
+            </div>
+            <div class="hero-badge">
+              <i class="fa-solid fa-shield-heart"></i>
+              100% Organic • Chemical Free
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-bg-circle"></div>
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="hero-avatar">
+                <i class="fa-solid fa-person-digging"></i>
+              </div>
+              <div>
+                <div class="hero-card-title">Ghanshyam Maurya</div>
+                <div class="hero-card-sub">
+                  Organic Farmer • Green Valley Farms
+                </div>
+              </div>
+            </div>
+            <div class="hero-card-list">
+              <div class="hero-card-item">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Desi tareeke se ugayi gayi sabziyan &amp; fasal.</span>
+              </div>
+              <div class="hero-card-item">
+                <i class="fa-solid fa-water"></i>
+                <span>Saaf paani aur mitti ki suraksha par zor.</span>
+              </div>
+              <div class="hero-card-item">
+                <i class="fa-solid fa-wheat-awn"></i>
+                <span>Seasonal hari sabziyan: palak, methi, bhindi aur aur bhi.</span>
+              </div>
+              <div class="hero-card-item">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span>Seedha kisan se kharidiye – beech ka koi dalal nahi.</span>
+              </div>
+            </div>
+            <div class="hero-card-foot">
+              <span class="hero-pill">
+                <i class="fa-solid fa-circle-check"></i>
+                100% Organic Farm
+              </span>
+              <span class="hero-stat">
+                <i class="fa-solid fa-mountain-sun"></i>
+                Maheshganj Bhaisana
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-title">Hamari Visheshataein</h2>
+          <p class="section-subtitle">
+            Taaji sabzi, shuddh mitti aur imandaar kheti – Green Valley Farms
+            par har din aapko milegi desi mitti ki asli sugandh.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <h3 class="feature-title">
+              <i class="fa-solid fa-basket-shopping"></i>
+              Taaji Sabziyan • Fresh From Our Fields
+            </h3>
+            <p class="feature-text">
+              Har subah, khet se seedha taazi sabzi tor kar laaye jaati hai.
+              Koi cold storage nahi, koi lambe time ka stock nahi – jo aaj
+              katega, wahi aaj bikta hai.
+            </p>
+
+            <ul class="feature-list">
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Taaji Sabziyan:</strong> Palak, Methi, Saag, Bhindi, Lauki, Tori, Tamatar, Aloo aur aur bhi.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>100% Organic:</strong> Koi chemical fertilizer ya pesticide ka istemaal nahi – sirf gomutra, khaad, aur prakritik tareeke.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Mitti ki sehat, paani ki bachat aur prakriti ki suraksha hamari sabse badi zimmedari hai.</span>
+              </li>
+            </ul>
+
+            <div class="feature-warning">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span>
+                <strong>Important:</strong> <br />
+                <strong>Home Delivery ki suvidha nahi hai.</strong> (No Home Delivery)
+              </span>
+            </div>
+            <p class="feature-note">
+              Kripya seedha farm par aakar hi sabzi kharidein. Aapko khet, fasal
+              aur kheti ka poora prakriya dekhne ka mauka milega – saath hi,
+              taza hawa aur hariyali ka anand bhi.
+            </p>
+          </article>
+
+          <div class="feature-stats">
+            <div class="feature-stat-card">
+              <div class="feature-stat-label">Organic Commitment</div>
+              <div class="feature-stat-value">
+                100% <span style="font-size: 0.8rem; font-weight: 600;">Chemical-Free</span>
+              </div>
+              <p class="feature-text">
+                Har fasal ko sirf prakritik khaad se poshan diya jata hai. Koi
+                chemical, koi injection, koi artificial growth booster nahi.
+              </p>
+            </div>
+            <div class="feature-stat-card">
+              <div class="feature-stat-label">Visit Experience</div>
+              <div class="feature-stat-value">
+                Farm Tour <span style="font-size: 0.8rem; font-weight: 600;">Available</span>
+              </div>
+              <p class="feature-text">
+                Aaiye, bachchon ko bhi sikhaiye ki unki roti-sabzi kahan se aati
+                hai. Mitti ko chhuiye, podhon ko dekhiye, aur kisan se milkar
+                asli organic kheti samajhiye.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-title">Farm &amp; Kisan Gallery</h2>
+          <p class="section-subtitle">
+            Yahan 10 tasveerein hongi jisme aapke khet (Khet Photos) aur kisan
+            (Kisan Photos) dikhai denge. Abhi ke liye yeh placeholder images
+            hain – baad mein aap asli photos yahan upload kar sakte hain.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- 10 Placeholder Images -->
+          <!-- Replace src with your own farm & farmer photos later -->
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/158827/farmer-man-agriculture-wine-158827.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Khet ki hari bhari fasal ka drishya"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-seedling"></i>
+              Khet 1
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/219794/pexels-photo-219794.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Kisan khet mein kaam karte hue"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-person-digging"></i>
+              Kisan 1
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/4221519/pexels-photo-4221519.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Sabziyon se bhara hara bhara khet"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-carrot"></i>
+              Sabzi 1
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/3189874/pexels-photo-3189874.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Organic kheti mein paudhon ki dekhbhal"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-leaf"></i>
+              Organic Care
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/1906159/pexels-photo-1906159.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Subah subah khet ka sundar drishya"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-sun"></i>
+              Morning Farm
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Khet mein hari sabziyan ki qataren"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-seedling"></i>
+              Khet 2
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/161581/salad-frisch-food-healthy-161581.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Organic sabziyon ka nazdeeki drishya"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-basket-shopping"></i>
+              Taaji Sabzi
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/1268101/pexels-photo-1268101.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Kisan aur parivaar khet mein"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-people-group"></i>
+              Parivaar
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/1883385/pexels-photo-1883385.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Khet ke paar se hara bhara drishya"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-tree"></i>
+              Green View
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="https://images.pexels.com/photos/1879613/pexels-photo-1879613.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Khet ka sundar sunset drishya"
+            />
+            <figcaption class="gallery-label">
+              <i class="fa-solid fa-mountain-sun"></i>
+              Sunset Farm
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Visit Section -->
+    <section id="visit" class="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-title">Farm Par Aayein • Visit &amp; Contact</h2>
+          <p class="section-subtitle">
+            Organic kheti ko apni aankhon se dekhiye. Seedha farm se sabzi
+            kharidiye aur kisan se milkar apne sawalon ka jawaab paiye.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-details">
+            <div class="contact-row">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div class="contact-text-title">Farm Address</div>
+                <div class="contact-text-body">
+                  <strong>Ghanshyam Maurya Farm</strong><br />
+                  Maheshganj Bhaisana
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <div class="contact-text-title">Email</div>
+                <div class="contact-text-body">
+                  <a href="mailto:Utkarshexperiment4@gmail.com">
+                    Utkarshexperiment4@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-icon">
+                <i class="fa-solid fa-circle-info"></i>
+              </div>
+              <div>
+                <div class="contact-text-title">Kaise Pahunchen?</div>
+                <div class="contact-text-body">
+                  Najdeeki shehar ya gaon se Maheshganj Bhaisana ki taraf aayein
+                  aur local logon se <em>"Ghanshyam Maurya Farm"</em> ka rasta
+                  puchhein. Farm par pahunch kar aapko khet dikhae jayenge aur
+                  taaji sabzi mil jayegi.
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-actions">
+              <a
+                class="btn-outline-light"
+                href="https://www.google.com/maps/search/?api=1&query=Maheshganj+Bhaisana"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-solid fa-map-location-dot"></i>
+                Get Directions (Google Maps)
+              </a>
+              <a class="btn-outline-light secondary" href="mailto:Utkarshexperiment4@gmail.com">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                Contact via Email
+              </a>
+            </div>
+          </div>
+
+          <aside class="contact-card">
+            <div class="contact-card-title">
+              <i class="fa-solid fa-mug-hot"></i>
+              Farm Visit Experience
+            </div>
+            <p class="contact-card-text">
+              Jab aap farm par aayenge, aapko khet ghoomaya jayega, faslon ke
+              baare mein bataya jayega, aur aap khud dekh sakte hain ki
+              <strong>100% Organic</strong> kheti kaise hoti hai.
+            </p>
+            <p class="contact-card-text">
+              Kripya dhyaan dein: <strong>Home Delivery ki suvidha nahi hai</strong>.
+              Isliye farm visit hi hamara sabse bada swagat hai.
+            </p>
+            <p class="contact-map-note">
+              Tip: Farm par subah ya shaam ke samay aaiye – hawa thandi, roshni
+              naram aur khet sabse zyada khubsurat lagte hain.
+            </p>
+          </aside>
+        </div>
+
+        <div class="footer-bottom">
+          <span>
+            ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Ghanshyam Maurya Farm • Green Valley Farms
+          </span>
+          <span>
+            Designed for organic farmers •
+            <a href="#hero">Back to top</a>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
